@@ -36,6 +36,8 @@ export default [
                 experimental: {
                     typescriptDeclarationDir: "dist/crates",
                 },
+
+                verbose: false,
             }),
         ],
     },

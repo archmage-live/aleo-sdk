@@ -1,5 +1,7 @@
 import wasm from "../dist/wasm.js";
 
+const exportAll = {};
+
 const {
     initThreadPool: wasmInitThreadPool,
     Address,
@@ -20,11 +22,9 @@ const {
     ViewKey,
     VerifyingKey,
     verifyFunctionExecution,
-} = await wasm({
-    importHook: () => {
-        return new URL("assets/aleo_wasm.wasm", import.meta.url);
-    },
-});
+} = exportAll;
+
+export { wasm };
 
 async function initThreadPool(threads) {
     if (threads == null) {
